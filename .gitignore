@@ -13,3 +13,4 @@ env.bak/
 venv.bak/ 
 
 config.json
+cache.db
