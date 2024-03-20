@@ -1,4 +1,4 @@
-from os import system as cmd 
+from os import getenv, system as cmd 
 import json
 
 def updateNodes(url):
