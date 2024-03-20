@@ -84,4 +84,4 @@ def update():
 
     return render_template_string(RESULT_PAGE_TEMPLATE, message=message)
 
-app.run(debug=True)
+app.run(debug=True, host="0.0.0.0", port="5000")
