@@ -1,4 +1,4 @@
-**Welcome to singboxWebOnDocker**
+# **Welcome to singboxWebOnDocker**
 
 We have noticed the absence of a Sing-Box agent deployable on Docker with a web panel for control. Hence, singboxWebOnDocker has emerged.
 
@@ -27,6 +27,7 @@ To deploy singboxWebOnDocker, follow these steps:
 1. Access the web panel by navigating to `http://localhost:5000`.
 2. Enter the subscription link in the provided input box on port `5000`.
 3. Wait for automatic redirection. If no redirection occurs within 10 seconds, check the logs for any issues.
+
 4. Configure your client to point the proxy address to `localhost:2080` for mixed traffic.
 
 ## Thanks
