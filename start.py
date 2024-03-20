@@ -12,6 +12,6 @@ def updateNodes(url):
     with open("./providers.json", "w") as prov:
         json.dump(data, prov, indent=4, ensure_ascii=False)
 
-updateNodes("") #TODO: using flask finish here
+updateNodes(getenv('subLink')) #TODO: using flask finish here
 cmd("python3 main.py --template_index=0")
 cmd("./sing-box run")
