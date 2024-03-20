@@ -77,11 +77,12 @@ def update():
         time.sleep(3)  # 3 seconds, for example
 
         # Redirect user to the sing-box service running on port 9090
-        return redirect("http://localhost:9090")
+        current_ip = request.remote_addr
+        return redirect(f"http://{current_ip}:9090")
 
     except subprocess.CalledProcessError as e:
         message = f"Command execution failed: {str(e)}"
 
     return render_template_string(RESULT_PAGE_TEMPLATE, message=message)
 
-app.run(debug=True, host="0.0.0.0", port="5000")
+app.run(debug=True, host="::", port="5000")
