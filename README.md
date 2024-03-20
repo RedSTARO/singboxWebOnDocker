@@ -8,19 +8,19 @@ To deploy singboxWebOnDocker, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/RedSTARO/singboxWebOnDocker.git
+    git clone https://github.com/RedSTARO/singboxWebOnDocker.git ; cd singboxWebOnDocker
     ```
 
 2. Build the Docker image:
 
     ```bash
-    sudo docker build -t singboxOnWeb .
+    sudo docker build -t singbox_web_on_docker .
     ```
 
 3. Run the Docker container:
 
     ```bash
-    sudo docker run -p 5000:5000 -p 9090:9090 -p 2080:2080 singboxOnWeb
+    sudo docker run -p 5000:5000 -p 9090:9090 -p 2080:2080 singbox_web_on_docker
     ```
 
 ## Usage
