@@ -4,6 +4,7 @@ import os
 import subprocess
 import threading
 import time
+from urllib.parse import urlparse
 
 app = Flask(__name__)
 
@@ -53,6 +54,7 @@ def updateNodes(url):
         json.dump(data, prov, indent=4, ensure_ascii=False)
 
 def run_sing_box():
+    subprocess.run(["./sing-box", "version"])
     subprocess.run(["./sing-box", "run"])
 
 @app.route('/', methods=['GET'])
@@ -74,15 +76,13 @@ def update():
         subprocess.run(["python3", "main.py", "--template_index=0"], check=True)
         threading.Thread(target=run_sing_box, daemon=True).start()
 
-        time.sleep(3)  # 3 seconds, for example
-
         # Redirect user to the sing-box service running on port 9090
-        current_ip = request.remote_addr
-        return redirect(f"http://{current_ip}:9090")
+        domain = urlparse(request.host_url).netloc.split(":")[0]
+        return redirect(f"http://{domain}:9090/")
 
     except subprocess.CalledProcessError as e:
         message = f"Command execution failed: {str(e)}"
 
-    return render_template_string(RESULT_PAGE_TEMPLATE, message=message)
+    # return render_template_string(RESULT_PAGE_TEMPLATE, message=message)
 
 app.run(debug=True, host="::", port="5000")
