@@ -1,5 +1,10 @@
 # **Welcome to singboxWebOnDocker**
 
+### Language / 语言
+- [English](README.md) (Default)
+- [中文](README-cn.md)
+
+
 We have noticed the absence of a Sing-Box agent deployable on Docker with a web panel for control. Hence, singboxWebOnDocker has emerged.
 
 ## Deployment
