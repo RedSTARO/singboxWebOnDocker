@@ -26,7 +26,7 @@ To deploy singboxWebOnDocker, follow these steps:
 ## Usage
 1. Access the web panel by navigating to `http://localhost:5000`.
 2. Enter the subscription link in the provided input box on port `5000`.
-3. Wait for automatic redirection. If no redirection occurs within 10 seconds, check the logs for any issues.
+3. Wait for automatic redirection to the panel at `http://localhost:9090`. If no redirection occurs within 10 seconds, check the logs for any issues.
 
 4. Configure your client to point the proxy address to `localhost:2080` for mixed traffic.
 
